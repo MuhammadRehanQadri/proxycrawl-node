@@ -1,0 +1,44 @@
+{
+  "name": "proxycrawl",
+  "version": "2.4.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "tsc": "rm -f index.d.ts && rm -f src/*.d.ts && tsc --allowJs -d --emitDeclarationOnly index.js",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/proxycrawl/proxycrawl-node.git"
+  },
+  "author": "ProxyCrawl <info@proxycrawl.com>",
+  "keywords": [
+    "scraping",
+    "crawling",
+    "scraper",
+    "scrape",
+    "crawler",
+    "proxycrawl",
+    "scraping-websites",
+    "scraping-framework",
+    "proxycrawl-api",
+    "leads",
+    "leads-api"
+  ],
+  "bugs": {
+    "url": "https://github.com/proxycrawl/proxycrawl-node/issues"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/proxycrawl/proxycrawl-node",
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^6.0.0",
+    "prettier": "^2.3.0",
+    "typescript": "^4.2.4"
+  },
+  "types": "./index.d.ts"
+}
