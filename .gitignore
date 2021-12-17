@@ -145,3 +145,7 @@ thumb
 sketch
 
 # End of https://www.toptal.com/developers/gitignore/api/react,node
+
+dump.html
+dump2.html
+test.js

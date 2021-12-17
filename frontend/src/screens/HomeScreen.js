@@ -7,7 +7,6 @@ const HomeScreen = () => {
   const [products, setProducts] = useState([]);
   useEffect(async () => {
     let { data: products } = await axios.get("/api/products");
-    console.log("prod", products);
     if (products && products.length) {
       setProducts(products);
     }

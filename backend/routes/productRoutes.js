@@ -1,11 +1,12 @@
-import express from 'express'
-const router = express.Router()
+import express from "express";
+const router = express.Router();
 import {
-    getProducts,
-    testProducts
-} from '../controllers/productController.js'
+  getProducts,
+  updateProduct,
+  deleteProduct,
+} from "../controllers/productController.js";
 
-router.route('/:query').get(getProducts)
-router.route('/').get(testProducts)
+router.route("/").get(getProducts);
+router.route("/:id").patch(updateProduct).delete(deleteProduct);
 
-export default router
+export default router;

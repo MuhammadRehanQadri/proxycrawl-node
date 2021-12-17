@@ -8,6 +8,7 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import productRoutes from "./routes/productRoutes.js";
 import sequelize from "./database/db.js";
 import product from "./models/productModel.js";
+import { processProductsByKeywords } from "./queues/processProductsQueue.js";
 
 dotenv.config();
 
@@ -40,6 +41,9 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(notFound);
 app.use(errorHandler);
+
+// handle queues
+await processProductsByKeywords({ keywords: process.env.KEYWORDS });
 
 const PORT = process.env.PORT || 5002;
 
