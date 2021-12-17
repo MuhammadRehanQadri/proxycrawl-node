@@ -5,15 +5,17 @@ import cheerio from "cheerio";
 import Product from "../models/productModel.js";
 import fetchResource from "../utils/fetchResource.js";
 
-// @desc    Sends usesr's query for crawling SERP using background jobs
-// @route   Get /api/products/:query
+// @desc    List getProducts
+// @route   Get /api/products/
 // @access  Public
 const getProducts = asyncHandler(async (req, res) => {
   const products = await Product.findAll();
-
   res.status(200).json(products);
 });
 
+// @desc    Update product by id
+// @route   Get /api/product/:id
+// @access  Public
 const updateProduct = asyncHandler(async (req, res) => {
   if (!req.params.id) {
     return res.status(400).json({ error: "Invalid Arguments" });
@@ -41,6 +43,9 @@ const updateProduct = asyncHandler(async (req, res) => {
   });
 });
 
+// @desc    Delete a product
+// @route   Get /api/product/:id
+// @access  Public
 const deleteProduct = asyncHandler(async (req, res) => {
   if (!req.params.id) {
     return res.status(400).json({ error: "Invalid Arguments" });
