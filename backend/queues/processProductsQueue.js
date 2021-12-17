@@ -9,6 +9,7 @@ productQueue.process(processProducts);
 const processProductsByKeywords = (data) => {
   productQueue.add(data, {
     attempts: 5,
+    repeat: { cron: '0 10 * * MON' }
   });
 };
 
